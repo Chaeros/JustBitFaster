@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\core">
+      <UniqueIdentifier>{cf20a2c1-d5d0-4658-b8b2-e0c5ebe84c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\input">
+      <UniqueIdentifier>{19b3b68f-c930-4a4b-9eb0-31c68419ac07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ui">
+      <UniqueIdentifier>{6be567f6-e926-412f-b93a-938cab3fc2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\robot">
+      <UniqueIdentifier>{a04b2b5a-4bcd-4b55-bc19-bb8eba122d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\core">
+      <UniqueIdentifier>{1e8fe405-b2f6-44f5-9007-c4c434516c80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\input">
+      <UniqueIdentifier>{6c726e3c-a12c-4b0e-b630-efe0a1537335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\robot">
+      <UniqueIdentifier>{073855fa-427c-4a4d-a3c8-71b36ab5c00e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\ui">
+      <UniqueIdentifier>{7c136329-c365-4cd4-b1ee-57d233ab1b77}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="src/robot/Robot.cpp">
+      <Filter>소스 파일\robot</Filter>
+    </ClCompile>
+    <ClCompile Include="src/ui/Ui.cpp">
+      <Filter>소스 파일\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src/core/DisplayShelf.cpp">
+      <Filter>소스 파일\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src/input/InputManager.cpp">
+      <Filter>소스 파일\input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include/core/DisplayShelf.h">
+      <Filter>헤더 파일\core</Filter>
+    </ClInclude>
+    <ClInclude Include="include/input/InputManager.h">
+      <Filter>헤더 파일\input</Filter>
+    </ClInclude>
+    <ClInclude Include="include/input/InputQueue.h">
+      <Filter>헤더 파일\input</Filter>
+    </ClInclude>
+    <ClInclude Include="include/core/Item.h">
+      <Filter>헤더 파일\core</Filter>
+    </ClInclude>
+    <ClInclude Include="include/robot/Robot.h">
+      <Filter>헤더 파일\robot</Filter>
+    </ClInclude>
+    <ClInclude Include="include/core/Types.h">
+      <Filter>헤더 파일\core</Filter>
+    </ClInclude>
+    <ClInclude Include="include/ui/Ui.h">
+      <Filter>헤더 파일\ui</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

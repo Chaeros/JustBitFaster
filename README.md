@@ -38,3 +38,27 @@
 - I = Up<br>
 - K = Down<br>
 - L = Select<br>
+
+## 기술 구조
+
+프로젝트는 다음과 같은 구조로 구성됩니다:
+
+include/
+core/
+input/
+robot/
+ui/
+game/controller/
+game/service/
+output/
+
+src/
+core/
+input/
+robot/
+ui/
+game/controller/
+game/service/
+output/
+
+main.cpp
