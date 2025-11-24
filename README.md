@@ -3,6 +3,17 @@
 
 ---
 
+## 실행파일 다운로드 경로
+<pre>
+JustBitFaster/
+└─ download/
+   └─ JustBitFaster.zip/
+</pre>
+
+- 위 경로의 JustBitFaster.zip 압축 해제 후 플레이 부탁드립니다. :) <br>
+  
+--- 
+
 ## 프로젝트 소개
 
 **JustBitFaster**는  
