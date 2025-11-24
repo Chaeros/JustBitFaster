@@ -20,6 +20,7 @@ public:
     bool isGlobalLocked() const { return globalLockActive; }
     void startGlobalLockTimer(int seconds);
     const std::string& getLockOwner() const { return lockOwner; }
+    bool isEmpty();
 
 private:
     int size;

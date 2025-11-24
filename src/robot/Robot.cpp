@@ -45,8 +45,6 @@ void Robot::run() {
                         std::cout << name << " activated GLOBAL LOCK!\n";
                         if (shelf.tryGlobalLock(name)) {
                             shelf.startGlobalLockTimer(3);
-                            //std::this_thread::sleep_for(std::chrono::seconds(3));
-                            //shelf.unlockGlobal();
                         }
                     }
                     else if (item.isDoubleScore) {

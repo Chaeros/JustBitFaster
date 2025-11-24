@@ -40,6 +40,11 @@ bool DisplayShelf::tryTakeItem(int index, Item& out) {
 
     out = slots[index];
     slots[index] = Item();
+
+    if (isEmpty()) {
+        generateItems();
+    }
+
     return true;
 }
 
@@ -64,4 +69,12 @@ void DisplayShelf::startGlobalLockTimer(int seconds)
         std::this_thread::sleep_for(std::chrono::seconds(seconds));
         this->unlockGlobal();
         }).detach();
+}
+
+bool DisplayShelf::isEmpty() {
+    for (auto& item : slots) {
+        if (!item.name.empty())
+            return false;
+    }
+    return true;
 }
