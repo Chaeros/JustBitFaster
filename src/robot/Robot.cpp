@@ -39,7 +39,7 @@ void Robot::run() {
             case CommandType::SELECT:
             {
                 Item item;
-                if (shelf.tryTakeItem(position, item)) {
+                if (shelf.tryTakeItem(position, item, name)) {
 
                     if (item.isGlobalLock) {
                         std::cout << name << " activated GLOBAL LOCK!\n";

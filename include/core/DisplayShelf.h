@@ -10,7 +10,7 @@ public:
     DisplayShelf(int size);
 
     void generateItems();
-    bool tryTakeItem(int index, Item& out);
+    bool tryTakeItem(int index, Item& out, const std::string& who);
 
     int getSize() const { return size; }
     const Item& peek(int index) const { return slots[index]; }

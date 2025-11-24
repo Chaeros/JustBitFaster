@@ -30,8 +30,9 @@ void DisplayShelf::generateItems() {
     }
 }
 
-bool DisplayShelf::tryTakeItem(int index, Item& out) {
-    if (globalLockActive) return false;
+bool DisplayShelf::tryTakeItem(int index, Item& out, const std::string& who) {
+    if (globalLockActive && lockOwner != who)
+        return false;
     if (index < 0 || index >= size) return false;
 
     std::lock_guard<std::mutex> lock(slotMutex[index]);
