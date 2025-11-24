@@ -1,4 +1,4 @@
-# JustBitFaster  
+# JustBitFaster(좀 더 빨랐죠) - 낯선 도구 해커톤
 양쪽 플레이어가 로봇팔을 조작해 진열대에서 아이템 합산 총계를 더 많이 가져가면 승리하는 멀티플레이 콘솔 게임
 
 ---
@@ -17,12 +17,15 @@
 ## 게임 규칙
 
 - 게임 시간은 **30초**
-- 진열대에는 0~n번 슬롯까지 아이템이 랜덤 생성됨
+- 진열대에는 0~9번 슬롯까지 아이템이 랜덤 생성됨
 - 플레이어는 위/아래로 이동하며 원하는 슬롯으로 로봇팔을 움직임
 - 선택키로 해당 슬롯의 아이템을 획득
 - 특정 아이템은 **글로벌 락(Global Lock)** 을 발생시켜
   - 자신만 아이템 획득 가능  
-  - 상대는 이동만 가능하고 획득은 잠시 차단됨
+  - 상대는 이동과 아이템 습득이 잠시 차단됨
+  - Lock 상태의 상대의 로봇이 붉은 색으로 포현됨
+- 특정 아이템은 **2배 점수 획득** 을 발생시켜, 이 후 먹는 아이템의 점수를 2배로 획득함
+- 진열대의 모든 Item을 가져가면, 진열대에 새로운 Item들이 다시 진열됨
 - 게임 종료 시 **총 점수가 더 높은 사람이 승리**
 
 ---
@@ -39,26 +42,65 @@
 - K = Down<br>
 - L = Select<br>
 
-## 기술 구조
+---
+
+## 폴더 구조
 
 프로젝트는 다음과 같은 구조로 구성됩니다:
 
-include/
-core/
-input/
-robot/
-ui/
-game/controller/
-game/service/
-output/
-
-src/
-core/
-input/
-robot/
-ui/
-game/controller/
-game/service/
-output/
-
-main.cpp
+<pre>
+JustBitFaster/
+├─ include/
+│  ├─ core/
+│  │  ├─ DisplayShelf.h
+│  │  ├─ Item.h
+│  │  └─ Types.h
+│  │
+│  ├─ game/
+│  │  ├─ controller/
+│  │  │  └─ GameController.h
+│  │  └─ service/
+│  │     ├─ ConsoleGameService.h
+│  │     └─ IGameService.h
+│  │
+│  ├─ input/
+│  │  ├─ InputManager.h
+│  │  ├─ InputQueue.h
+│  │  └─ RetryInputView.h
+│  │
+│  ├─ output/
+│  │  └─ EndGameOutputView.h
+│  │
+│  ├─ robot/
+│  │  └─ Robot.h
+│  │
+│  └─ ui/
+│     └─ Ui.h
+│
+├─ src/
+│  ├─ core/
+│  │  └─ DisplayShelf.cpp
+│  │
+│  ├─ game/
+│  │  ├─ controller/
+│  │  │  └─ GameController.cpp
+│  │  └─ service/
+│  │     └─ ConsoleGameService.cpp
+│  │
+│  ├─ input/
+│  │  ├─ InputManager.cpp
+│  │  └─ RetryInputView.cpp
+│  │
+│  ├─ output/
+│  │  └─ EndGameOutputView.cpp
+│  │
+│  ├─ robot/
+│  │  └─ Robot.cpp
+│  │
+│  └─ ui/
+│     └─ Ui.cpp
+│
+├─ main.cpp
+├─ README.md
+└─ 프로젝트 설정 파일 (JustBitFaster.vcxproj 등)
+</pre>
