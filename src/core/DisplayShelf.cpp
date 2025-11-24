@@ -79,3 +79,16 @@ bool DisplayShelf::isEmpty() {
     }
     return true;
 }
+
+void DisplayShelf::reset() {
+    for (auto& m : slotMutex) {
+    }
+
+    globalLockActive = false;
+    lockOwner.clear();
+    if (globalMutex.try_lock()) {
+        globalMutex.unlock();
+    }
+
+    generateItems();
+}

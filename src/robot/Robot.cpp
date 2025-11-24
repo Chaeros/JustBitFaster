@@ -71,3 +71,9 @@ void Robot::run() {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 }
+
+void Robot::reset() {
+    position = 0;
+    score = 0;
+    doubleScoreMode = false;
+}

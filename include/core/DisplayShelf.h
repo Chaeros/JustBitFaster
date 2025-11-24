@@ -21,6 +21,7 @@ public:
     void startGlobalLockTimer(int seconds);
     const std::string& getLockOwner() const { return lockOwner; }
     bool isEmpty();
+    void reset();
 
 private:
     int size;

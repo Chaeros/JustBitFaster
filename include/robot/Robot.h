@@ -15,6 +15,7 @@ public:
 
     int getScore() const { return score; }
     int getPosition() const { return position; }
+    void reset();
 
 private:
     void run();

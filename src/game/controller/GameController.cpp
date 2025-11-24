@@ -18,6 +18,8 @@ void GameController::run()
     service.init();
 
     do {
+        service.clear();
+        service.resetGame(shelf, r1, r2);
         gameLoop();
         EndGameOutputView::printResult(r1.getScore(), r2.getScore());
 
