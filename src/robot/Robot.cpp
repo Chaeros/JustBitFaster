@@ -20,6 +20,11 @@ void Robot::stop() {
 
 void Robot::run() {
     while (running) {
+        if (shelf.isGlobalLocked() && shelf.getLockOwner() != name) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            continue;
+        }
+
         CommandType cmd;
         if (input.pop(cmd)) {
             switch (cmd) {
@@ -33,16 +38,15 @@ void Robot::run() {
 
             case CommandType::SELECT:
             {
-                if (shelf.isGlobalLocked()) break;
-
                 Item item;
                 if (shelf.tryTakeItem(position, item)) {
 
                     if (item.isGlobalLock) {
                         std::cout << name << " activated GLOBAL LOCK!\n";
-                        if (shelf.tryGlobalLock()) {
-                            std::this_thread::sleep_for(std::chrono::seconds(3));
-                            shelf.unlockGlobal();
+                        if (shelf.tryGlobalLock(name)) {
+                            shelf.startGlobalLockTimer(3);
+                            //std::this_thread::sleep_for(std::chrono::seconds(3));
+                            //shelf.unlockGlobal();
                         }
                     }
                     else if (item.isDoubleScore) {

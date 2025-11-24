@@ -43,9 +43,10 @@ bool DisplayShelf::tryTakeItem(int index, Item& out) {
     return true;
 }
 
-bool DisplayShelf::tryGlobalLock() {
+bool DisplayShelf::tryGlobalLock(const std::string& who) {
     if (globalMutex.try_lock()) {
         globalLockActive = true;
+        lockOwner = who;
         return true;
     }
     return false;
@@ -53,5 +54,14 @@ bool DisplayShelf::tryGlobalLock() {
 
 void DisplayShelf::unlockGlobal() {
     globalLockActive = false;
+    lockOwner.clear();
     globalMutex.unlock();
+}
+
+void DisplayShelf::startGlobalLockTimer(int seconds)
+{
+    std::thread([this, seconds]() {
+        std::this_thread::sleep_for(std::chrono::seconds(seconds));
+        this->unlockGlobal();
+        }).detach();
 }
