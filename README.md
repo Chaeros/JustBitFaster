@@ -44,6 +44,33 @@
 
 ---
 
+## 게임 진행 화면
+<h3>1. 게임 시작 화면</h3>
+<img src="https://github.com/user-attachments/assets/7d336975-c96e-44e6-b438-efcf74628f10" width="400"> <br>
+- 중앙 진열대를 기준으로 양 옆에 로봇이 하나씩 존재합니다. <br>
+- 2명의 플레이어가 진행할 수 있으며, 각 로봇 당 한명의 플레이어가 플레이합니다. <br>
+- 플레이어가 Item을 가져가면, Item 우측의 점수를 획득합니다. <br>
+<br>
+
+<h3>2. Lock 아이템 획득 시 화면</h3>
+<img src="https://github.com/user-attachments/assets/777d87d0-0d3b-4ad4-abea-3146d7cd2db8" width="400"> <br>
+- Lock 아이템을 획득할 경우(GlobalLockItem), 상대는 3초 간 로봇을 이동하거나, 현재 위치의 Item을 가져갈 수 없습니다. <br>
+- 위 이미지는 플레이어2가 Lock 아이템을 획득한 모습으로, 상대인 플레이어1의 로봇은 붉은 색을 띕니다. <br>
+<br>
+
+<h3>3. 2배 Score 아이템 획득 시 화면</h3>
+<img src="https://github.com/user-attachments/assets/84d1fdde-a474-4d80-a8e7-673bc2f2b242" width="400"> <br>
+- 2배 Score 아이템을 획득할 경우(DoubleScoreItem), 다음에 획득하는 Item의 접수를 2배 획득합니다. <br>
+<br>
+
+<h3>4. 플레이 결과 출력 및 재시도 화면</h3>
+<img src="https://github.com/user-attachments/assets/5af42732-d574-48c4-b1c7-2f406fce1edf" width="400"> <br>
+- 제한 시간(30초) 내 더 많은 점수를 획득한 플레이어가 승리합니다. <br>
+- 입력을 통해 다시 새로운 게임을 플레이할 수 있습니다. <br>
+<br>
+
+---
+
 ## 폴더 구조
 
 프로젝트는 다음과 같은 구조로 구성됩니다:
