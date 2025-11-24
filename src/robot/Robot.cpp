@@ -42,7 +42,6 @@ void Robot::run() {
                 if (shelf.tryTakeItem(position, item, name)) {
 
                     if (item.isGlobalLock) {
-                        std::cout << name << " activated GLOBAL LOCK!\n";
                         if (shelf.tryGlobalLock(name)) {
                             shelf.startGlobalLockTimer(3);
                         }
